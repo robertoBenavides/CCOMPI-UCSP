@@ -2,10 +2,33 @@
 //
 
 #include <iostream>
-
+using namespace std;
 int main()
 {
-    std::cout << "Hello World!\n";
+	int mayor;
+	int count = 0;
+	bool over = false;
+	while (!over) {
+		if (count == 0) {
+			cout << "numero " << (count + 1) << " :";
+			cin >> mayor;
+		}
+		else {
+			int n;
+			cout << "numero " << (count + 1) << " :";
+			cin >> n;
+			if (n > mayor) {
+				mayor = n;
+			}
+		}
+		if (count == 2){
+			over = true;
+		}
+		count++;
+	}
+
+	cout <<"numero mayor es: "<<mayor;
+	return 0;
 }
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
