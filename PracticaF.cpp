@@ -30,17 +30,23 @@ int countDigits(int n1) {
 		c++;
 		n1 /= div;
 	}
-	cout <<n0 << " tiene "<< c<<" digito(s)"<< endl;
 	return c;
 }
 void getcantDigits() {
 	int n1;
 	cout << "ingrese caracter: ";
 	cin >> n1;
-	countDigits(n1);
+	
+	cout << n1 << " tiene " << countDigits(n1) << " digito(s)" << endl;
 }
+
 bool isPalindrome(int a) {
 	int div=10, n=countDigits(a);
+	int c = a / 10000;
+	int d = c % 10;
+	int e = a / 1000- c * 10 ;
+	int f = ((a % 100) - d) / 10;
+	return (c==d && e==f);
 
 }
 void palindrome() {
@@ -111,7 +117,8 @@ void ifTextConvert() {
 int main()
 {
 	//printDigits();
-	//getcantDigits();
+	getcantDigits();
+	//palindrome();
 	//getnumposfib();
 	//isNumber();
 	//ifTextConvert();
