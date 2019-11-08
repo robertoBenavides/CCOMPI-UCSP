@@ -16,7 +16,7 @@ public:
 	void createUser(Usuario);
 	void updateUser(Usuario);
 	void deleteUser(int);
-	Usuario getById(int);
+	Usuario* getById(int);
 	void toString();
 	void saveData();
 };

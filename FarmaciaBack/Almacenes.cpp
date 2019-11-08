@@ -18,8 +18,8 @@ void Almacenes::createAlmacen(Almacen almacen) {
 }
 void Almacenes::updateAlmacen(Almacen almacen)
 {
-	int pos = getIndexByCodigo(almacen.getCodigo());
-	this->almacenes[pos] = almacen;
+	Almacen* pos = getByCodigo(almacen.getCodigo());
+	*pos = almacen;
 }
 void Almacenes::deleteAlmacen(int id)
 {
@@ -83,8 +83,8 @@ int Almacenes::getIndexByCodigo(int e) {
 		return -1;
 	return bBusca(this->almacenes, e, 0, this->almacenes.size() - 1);
 }
-Almacen Almacenes::getByCodigo(int e) {
+Almacen* Almacenes::getByCodigo(int e) {
 	if (this->almacenes.size() == 0)
-		return Almacen();
-	return this->almacenes.at(bBusca(this->almacenes, e, 0, this->almacenes.size() - 1));
+		return &Almacen();
+	return &this->almacenes.at(bBusca(this->almacenes, e, 0, this->almacenes.size() - 1));
 }

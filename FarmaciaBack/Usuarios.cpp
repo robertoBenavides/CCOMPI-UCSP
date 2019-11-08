@@ -27,8 +27,8 @@ void Usuarios::createUser(Usuario usuario) {
 }
 void Usuarios::updateUser(Usuario usuario)
 {
-	int pos=getIndexById(usuario.getId());
-	this->usuarios[pos]=usuario;
+	Usuario* pos=getById(usuario.getId());
+	*pos=usuario;
 }
 void Usuarios::deleteUser(int id)
 {
@@ -44,7 +44,7 @@ void Usuarios::loadData() {
 	while (getline(fs,line)) {
 		if (line != "") {
 			l = da.split(line);
-			TipoUsuario a = this->tipousuarios->getByCodigo(stoi(l[7]));
+			TipoUsuario a = *(this->tipousuarios->getByCodigo(stoi(l[7])));
 			Usuario u(stoi(l[0]), l[1], l[2], l[3], l[4], l[5], l[6], a);
 			createUser(u);
 		}
@@ -92,10 +92,10 @@ int Usuarios::getIndexById(int e) {
 		return -1;
 	return bBusca(this->usuarios, e, 0, this->usuarios.size() - 1);
 }
-Usuario Usuarios::getById(int e) {
+Usuario* Usuarios::getById(int e) {
 	if (this->usuarios.size() == 0)
-		return Usuario();
-	return this->usuarios.at( bBusca(this->usuarios, e, 0, this->usuarios.size() - 1));
+		return &Usuario();
+	return &this->usuarios.at( bBusca(this->usuarios, e, 0, this->usuarios.size() - 1));
 }
 
 

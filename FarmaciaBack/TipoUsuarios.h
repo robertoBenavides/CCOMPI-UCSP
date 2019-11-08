@@ -13,7 +13,7 @@ public:
 	void createTipoUsuario(TipoUsuario);
 	void updateTipoUsuario(TipoUsuario);
 	void deleteTipoUsuario(int);
-	TipoUsuario getByCodigo(int);
+	TipoUsuario* getByCodigo(int);
 	void toString();
 	void saveData();
 };

@@ -14,7 +14,7 @@ public:
 	void createAlmacen(Almacen);
 	void updateAlmacen(Almacen);
 	void deleteAlmacen(int);
-	Almacen getByCodigo(int);
+	Almacen* getByCodigo(int);
 	void toString();
 	void saveData();
 };

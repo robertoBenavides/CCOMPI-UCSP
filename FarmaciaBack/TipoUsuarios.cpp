@@ -19,8 +19,8 @@ void TipoUsuarios::createTipoUsuario(TipoUsuario tipousuario) {
 }
 void TipoUsuarios::updateTipoUsuario(TipoUsuario tipoproducto)
 {
-	int pos = getIndexByCodigo(tipoproducto.getCodigo());
-	this->tipoUsuarios[pos] = tipoproducto;
+	TipoUsuario* pos = getByCodigo(tipoproducto.getCodigo());
+	*pos = tipoproducto;
 }
 void TipoUsuarios::deleteTipoUsuario(int id)
 {
@@ -84,8 +84,8 @@ int TipoUsuarios::getIndexByCodigo(int e) {
 		return -1;
 	return bBusca(this->tipoUsuarios, e, 0, this->tipoUsuarios.size() - 1);
 }
-TipoUsuario TipoUsuarios::getByCodigo(int e) {
+TipoUsuario* TipoUsuarios::getByCodigo(int e) {
 	if (this->tipoUsuarios.size() == 0)
-		return TipoUsuario();
-	return this->tipoUsuarios.at(bBusca(this->tipoUsuarios, e, 0, this->tipoUsuarios.size()-1));
+		return &TipoUsuario();
+	return &this->tipoUsuarios.at(bBusca(this->tipoUsuarios, e, 0, this->tipoUsuarios.size()-1));
 }

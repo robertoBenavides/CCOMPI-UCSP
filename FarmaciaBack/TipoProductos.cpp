@@ -20,8 +20,8 @@ void TipoProductos::createTipoProducto(TipoProducto tipoproducto) {
 }
 void TipoProductos::updateTipoProducto(TipoProducto tipoproducto)
 {
-	int pos = getIndexByCodigo(tipoproducto.getCodigo());
-	this->tipoproductos[pos] = tipoproducto;
+	TipoProducto* pos = getByCodigo(tipoproducto.getCodigo());
+	*pos = tipoproducto;
 }
 void TipoProductos::deleteTipoProducto(int id)
 {
@@ -84,8 +84,8 @@ int TipoProductos::getIndexByCodigo(int e) {
 		return -1;
 	return bBusca(this->tipoproductos, e, 0, this->tipoproductos.size() - 1);
 }
-TipoProducto TipoProductos::getByCodigo(int e) {
+TipoProducto* TipoProductos::getByCodigo(int e) {
 	if (this->tipoproductos.size() == 0)
-		return TipoProducto();
-	return this->tipoproductos.at(bBusca(this->tipoproductos, e, 0, this->tipoproductos.size() - 1));
+		return &TipoProducto();
+	return &this->tipoproductos.at(bBusca(this->tipoproductos, e, 0, this->tipoproductos.size() - 1));
 }

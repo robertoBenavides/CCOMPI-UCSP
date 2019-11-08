@@ -14,7 +14,7 @@ public:
 	void createTipoProducto(TipoProducto);
 	void updateTipoProducto(TipoProducto);
 	void deleteTipoProducto(int);
-	TipoProducto getByCodigo(int);
+	TipoProducto* getByCodigo(int);
 	void toString();
 	void saveData();
 };

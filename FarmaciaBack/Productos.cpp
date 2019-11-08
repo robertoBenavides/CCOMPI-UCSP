@@ -43,7 +43,7 @@ void Productos::loadData() {
 	while (getline(fs, line)) {
 		if (line != "") {
 			l = da.split(line);
-			Producto u(stoi(l[0]), l[1], l[2], tipoProductos->getByCodigo(stoi(l[3])));
+			Producto u(stoi(l[0]), l[1], l[2], *(tipoProductos->getByCodigo(stoi(l[3]))));
 			createProducto(u);
 		}
 	}

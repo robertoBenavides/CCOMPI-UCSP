@@ -1,4 +1,8 @@
-1,Paracetamol,alivia dolor,1
 2,Ibuprofeno,alivia dolor,1
 3,Metamizol,alivia dolor,1
 4,Tramadol,alivia dolor,1
+5,Omapren,Inhibidores de la bomba de protones,2
+6,Norpramin,Inhibidores de la bomba de protones,2
+7,Opiren,Inhibidores de la bomba de protones,2
+8,Audazol,Inhibidores de la bomba de protones,2
+9,Pepticum,Inhibidores de la bomba de protones,2

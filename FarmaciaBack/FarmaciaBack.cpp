@@ -7,19 +7,40 @@
 #include "Almacenes.h"
 #include <iostream>
 using namespace std;
+TipoUsuarios* tusers = new TipoUsuarios();
+TipoProductos* tprods = new TipoProductos();
+Usuarios* users = new Usuarios(tusers);
+Productos* prod = new Productos(tprods);
+Almacenes* almacenes = new Almacenes();
+void printTables() {
+	tusers->toString();
+	cout << endl;
+
+	tprods->toString();
+	cout << endl;
+
+	users->toString();
+	cout << endl;
+
+	prod->toString();
+	cout << endl;
+
+	almacenes->toString();
+	cout << endl;
+}
 int main()
 {
 	cout << "loading data..." << endl;
-	TipoUsuarios *tusers=new TipoUsuarios();
-	tusers->toString();
-	TipoProductos* tprods = new TipoProductos();
-	tprods->toString();
-	Usuarios* users = new Usuarios(tusers);
-	users->toString();
-	Productos *prod = new Productos(tprods);
-	prod->toString();
-	Almacenes* almacenes = new Almacenes();
-	almacenes->toString();
+	printTables();
+	
+	//updating User
+	Usuario usuario(2,"nombre","c","name","pd","70000403","Direccion",*(tusers->getByCodigo(1)));
+	users->updateUser(usuario);
+	//prod->deleteProducto(1);
+	users->deleteUser(3);
+
+
+	printTables();
 
 	tusers->saveData();
 	tprods->saveData();
