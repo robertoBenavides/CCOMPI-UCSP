@@ -18,12 +18,12 @@ void Almacenes::createAlmacen(Almacen almacen) {
 }
 void Almacenes::updateAlmacen(Almacen almacen)
 {
-	int pos = getByCodigo(almacen.getCodigo());
+	int pos = getIndexByCodigo(almacen.getCodigo());
 	this->almacenes[pos] = almacen;
 }
 void Almacenes::deleteAlmacen(int id)
 {
-	int pos = getByCodigo(id);
+	int pos = getIndexByCodigo(id);
 	this->almacenes.erase(this->almacenes.begin() + pos);
 }
 void Almacenes::loadData() {
@@ -43,8 +43,8 @@ void Almacenes::loadData() {
 	fs.close();
 }
 void Almacenes::toString() {
-	cout << left << setw(5) << "id" << setw(20) << "nombre" << setw(20) << "apellido"
-		<< setw(20) << "direccion" << setw(10) << "dni" << setw(20) << "uname" << setw(20) << "upwd" << endl;
+	cout << "ALMACENES" << endl;
+	cout << left << setw(10) << "codigo" << setw(20) << "nombre" << setw(40) << "direccion"<< endl;
 	for (int i = 0; i < almacenes.size(); i++)
 		almacenes[i].toString();
 }
@@ -68,7 +68,7 @@ int Almacenes::bBusca(vector<Almacen> L, int e, int inicio, int fin) {
 	if (inicio == fin)
 		return (L[inicio].getCodigo() == e) ? inicio : -1;
 
-	int i = (fin + inicio);
+	int i = (fin + inicio)/2;
 
 	if (L[i].getCodigo() == e)
 		return i;
@@ -78,8 +78,13 @@ int Almacenes::bBusca(vector<Almacen> L, int e, int inicio, int fin) {
 	else
 		return bBusca(L, e, i + 1, fin);
 }
-int Almacenes::getByCodigo(int e) {
+int Almacenes::getIndexByCodigo(int e) {
 	if (this->almacenes.size() == 0)
 		return -1;
 	return bBusca(this->almacenes, e, 0, this->almacenes.size() - 1);
+}
+Almacen Almacenes::getByCodigo(int e) {
+	if (this->almacenes.size() == 0)
+		return Almacen();
+	return this->almacenes.at(bBusca(this->almacenes, e, 0, this->almacenes.size() - 1));
 }

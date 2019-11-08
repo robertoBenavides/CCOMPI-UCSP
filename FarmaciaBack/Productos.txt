@@ -1,0 +1,4 @@
+1,Paracetamol,alivia dolor,1
+2,Ibuprofeno,alivia dolor,1
+3,Metamizol,alivia dolor,1
+4,Tramadol,alivia dolor,1

@@ -157,6 +157,7 @@
     <ClCompile Include="Almacenes.cpp" />
     <ClCompile Include="dataAdapter.cpp" />
     <ClCompile Include="DetalleAlmacen.cpp" />
+    <ClCompile Include="DetalleAlmacenes.cpp" />
     <ClCompile Include="FarmaciaBack.cpp" />
     <ClCompile Include="Producto.cpp" />
     <ClCompile Include="Productos.cpp" />
@@ -174,6 +175,7 @@
     <ClInclude Include="Almacenes.h" />
     <ClInclude Include="dataAdapter.h" />
     <ClInclude Include="DetalleAlmacen.h" />
+    <ClInclude Include="DetalleAlmacenes.h" />
     <ClInclude Include="Producto.h" />
     <ClInclude Include="Productos.h" />
     <ClInclude Include="TipoProducto.h" />

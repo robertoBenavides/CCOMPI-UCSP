@@ -26,12 +26,12 @@ void Productos::createProducto(Producto producto) {
 }
 void Productos::updateProducto(Producto producto)
 {
-	int pos = getByCodigo(producto.getCodigo());
+	int pos = getIndexByCodigo(producto.getCodigo());
 	this->productos[pos] = producto;
 }
 void Productos::deleteProducto(int id)
 {
-	int pos = getByCodigo(id);
+	int pos = getIndexByCodigo(id);
 	this->productos.erase(this->productos.begin() + pos);
 }
 void Productos::loadData() {
@@ -50,8 +50,9 @@ void Productos::loadData() {
 	fs.close();
 }
 void Productos::toString() {
-	cout << left << setw(5) << "id" << setw(20) << "nombre" << setw(20) << "apellido"
-		<< setw(20) << "direccion" << setw(10) << "dni" << setw(20) << "uname" << setw(20) << "upwd" << endl;
+	cout << "PRODUCTOS" << endl;
+	cout << left << setw(10) << "codigo" << setw(20) << "nombre" << setw(40) << "descripcion"
+		<< setw(20) << "tipoproducto" <<endl;
 	for (int i = 0; i < productos.size(); i++)
 		productos[i].toString();
 }
@@ -65,7 +66,7 @@ void Productos::saveData()
 	}
 	for (int i = 0; i < this->productos.size(); i++) {
 		Producto a = productos[i];
-		of << a.getCodigo() << "," << a.getNombre() << "," << a.getDescripcion() << "," << a.getTipoprod().getDescripcion() << endl;
+		of << a.getCodigo() << "," << a.getNombre() << "," << a.getDescripcion() << "," << a.getTipoprod().getCodigo() << endl;
 	}
 	of.close();
 }
@@ -75,7 +76,7 @@ int Productos::bBusca(vector<Producto> L, int e, int inicio, int fin) {
 	if (inicio == fin)
 		return (L[inicio].getCodigo() == e) ? inicio : -1;
 
-	int i = (fin + inicio);
+	int i = (fin + inicio)/2;
 
 	if (L[i].getCodigo() == e)
 		return i;
@@ -85,8 +86,13 @@ int Productos::bBusca(vector<Producto> L, int e, int inicio, int fin) {
 	else
 		return bBusca(L, e, i + 1, fin);
 }
-int Productos::getByCodigo(int e) {
+int Productos::getIndexByCodigo(int e) {
 	if (this->productos.size() == 0)
 		return -1;
 	return bBusca(this->productos, e, 0, this->productos.size() - 1);
+}
+Producto Productos::getByCodigo(int e) {
+	if (this->productos.size() == 0)
+		return Producto();
+	return this->productos.at( bBusca(this->productos, e, 0, this->productos.size() - 1));
 }

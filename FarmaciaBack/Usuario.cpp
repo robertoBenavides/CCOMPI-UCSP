@@ -104,5 +104,5 @@ TipoUsuario Usuario::getTipoUsuario()
 }
 void Usuario::toString() {
 	cout <<left<<setw(5)<< id <<setw(20)<< nombre << setw(20) << apellido 
-		<< setw(20) << direccion << setw(10) << dni << setw(20) << uname<< setw(20) << upwd<< endl;
+		<< setw(20) << direccion << setw(10) << dni << setw(20) << uname<< setw(20) << tipo.getDescripcion()<< endl;
 }

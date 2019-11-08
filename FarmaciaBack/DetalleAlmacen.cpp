@@ -2,8 +2,7 @@
 
 DetalleAlmacen::DetalleAlmacen()
 {
-	this->precio = 0;
-	this->cantidad = 0;
+	
 }
 
 DetalleAlmacen::DetalleAlmacen(Almacen almacen, Producto producto, double precio, int cantidad)

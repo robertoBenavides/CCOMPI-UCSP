@@ -9,13 +9,14 @@ private:
 	TipoUsuarios *tipousuarios;
 	int bBusca(vector<Usuario>, int, int, int);
 	void loadData();
+	int getIndexById(int);
 public:
 	Usuarios();
 	Usuarios(TipoUsuarios *);
 	void createUser(Usuario);
 	void updateUser(Usuario);
 	void deleteUser(int);
-	int getById(int);
+	Usuario getById(int);
 	void toString();
 	void saveData();
 };

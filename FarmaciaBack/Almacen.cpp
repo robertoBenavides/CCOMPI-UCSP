@@ -53,5 +53,5 @@ void Almacen::setDireccion(string direccion)
 }
 
 void Almacen::toString() {
-	cout << left << setw(5) << codigo << setw(20) << nombre << setw(40) << direccion<<endl;
+	cout << left << setw(10) << codigo << setw(20) << nombre << setw(40) << direccion<<endl;
 }

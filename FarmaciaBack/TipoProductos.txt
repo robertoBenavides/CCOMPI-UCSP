@@ -1,0 +1,8 @@
+1,Analgesicos
+2,Antiacidos y antiulcerosos
+3,Antialergicos
+4,Antidiarreicos y laxantes
+5,Antiinfecciosos
+6,Antiinflamatorios
+7,Antipireticos
+8,Antitusivos y mucolíticos

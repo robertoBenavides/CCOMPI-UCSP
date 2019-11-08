@@ -27,12 +27,12 @@ void Usuarios::createUser(Usuario usuario) {
 }
 void Usuarios::updateUser(Usuario usuario)
 {
-	int pos=getById(usuario.getId());
+	int pos=getIndexById(usuario.getId());
 	this->usuarios[pos]=usuario;
 }
 void Usuarios::deleteUser(int id)
 {
-	int pos = getById(id);
+	int pos = getIndexById(id);
 	this->usuarios.erase(this->usuarios.begin()+pos);
 }
 void Usuarios::loadData() {
@@ -52,8 +52,9 @@ void Usuarios::loadData() {
 	fs.close();
 }
 void Usuarios::toString() {
+	cout << "USUARIOS" << endl;
 	cout << left << setw(5) << "id" << setw(20) << "nombre" << setw(20) << "apellido"
-		<< setw(20) << "direccion" << setw(10) << "dni" << setw(20) << "uname" << setw(20) << "upwd" << endl;
+		<< setw(20) << "direccion" << setw(10) << "dni" << setw(20) << "uname" << setw(20) << "tipoUsuario" << endl;
 	for (int i=0;i < usuarios.size();i++)
 		usuarios[i].toString();
 }
@@ -76,7 +77,7 @@ int Usuarios::bBusca(vector<Usuario> L, int e, int inicio, int fin) {
 	if (inicio == fin)
 		return (L[inicio].getId() == e) ? inicio : -1;
 
-	int i = (fin + inicio);
+	int i = (fin + inicio)/2;
 
 	if (L[i].getId() == e)
 		return i;
@@ -86,9 +87,15 @@ int Usuarios::bBusca(vector<Usuario> L, int e, int inicio, int fin) {
 	else
 		return bBusca(L, e, i + 1, fin);
 }
-int Usuarios::getById(int e) {
+int Usuarios::getIndexById(int e) {
 	if (this->usuarios.size() == 0)
 		return -1;
 	return bBusca(this->usuarios, e, 0, this->usuarios.size() - 1);
 }
+Usuario Usuarios::getById(int e) {
+	if (this->usuarios.size() == 0)
+		return Usuario();
+	return this->usuarios.at( bBusca(this->usuarios, e, 0, this->usuarios.size() - 1));
+}
+
 

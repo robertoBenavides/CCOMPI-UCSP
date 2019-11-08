@@ -37,5 +37,5 @@ void TipoUsuario::setDescripcion(string descripcion)
 
 void TipoUsuario::toString()
 {
-	cout << left << setw(5) << codigo << setw(20) << descripcion << endl;
+	cout << left << setw(10) << codigo << setw(40) << descripcion << endl;
 }

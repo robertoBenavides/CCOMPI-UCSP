@@ -11,12 +11,22 @@ int main()
 {
 	cout << "loading data..." << endl;
 	TipoUsuarios *tusers=new TipoUsuarios();
+	tusers->toString();
 	TipoProductos* tprods = new TipoProductos();
+	tprods->toString();
 	Usuarios* users = new Usuarios(tusers);
+	users->toString();
 	Productos *prod = new Productos(tprods);
+	prod->toString();
 	Almacenes* almacenes = new Almacenes();
+	almacenes->toString();
 
-	string nombre,apellido,uname,upwd,dni,direccion,tipo;
+	tusers->saveData();
+	tprods->saveData();
+	users->saveData();
+	prod->saveData();
+	almacenes->saveData();
+	/*string nombre,apellido,uname,upwd,dni,direccion,tipo;
 	cout << "ingresar Usuario" << endl;
 	cout << "nombre:" << endl;
 	getline(cin,nombre);
@@ -35,6 +45,6 @@ int main()
 	Usuario c(nombre, apellido, uname, upwd, dni, direccion, tusers->getByCodigo(stoi(tipo)));
 	users->createUser(c);
 	users->toString();
-	users->saveData();
+	users->saveData();*/
 
 }

@@ -44,8 +44,8 @@ void TipoProductos::loadData() {
 	fs.close();
 }
 void TipoProductos::toString() {
-	cout << left << setw(5) << "id" << setw(20) << "nombre" << setw(20) << "apellido"
-		<< setw(20) << "direccion" << setw(10) << "dni" << setw(20) << "uname" << setw(20) << "upwd" << endl;
+	cout << "TIPO PRODUCTOS"<<endl;
+	cout << left << setw(10) << "codigo" << setw(40) << "descripcion" << endl;
 	for (int i = 0; i < tipoproductos.size(); i++)
 		tipoproductos[i].toString();
 }
@@ -69,7 +69,7 @@ int TipoProductos::bBusca(vector<TipoProducto> L, int e, int inicio, int fin) {
 	if (inicio == fin)
 		return (L[inicio].getCodigo() == e) ? inicio : -1;
 
-	int i = (fin + inicio);
+	int i = (fin + inicio)/2;
 
 	if (L[i].getCodigo() == e)
 		return i;
