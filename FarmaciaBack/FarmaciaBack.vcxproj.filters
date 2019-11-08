@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Archivos de origen">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Archivos de encabezado">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Archivos de recursos">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Modelos">
+      <UniqueIdentifier>{aca0dcbe-2849-453b-9135-e60fd01909eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Tablas">
+      <UniqueIdentifier>{acfbae2a-09fb-43ae-b361-2fd093a8e074}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Modelos">
+      <UniqueIdentifier>{6547223b-3b8e-4af8-9a42-b90152c86663}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Tablas">
+      <UniqueIdentifier>{8a613b93-35f8-4b58-864b-35b6367f87d1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FarmaciaBack.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\semestre2\CCOMPI\Farmacia\Farmacia\Documento.cpp">
+      <Filter>Archivos de origen\Modelos</Filter>
+    </ClCompile>
+    <ClCompile Include="Usuarios.cpp">
+      <Filter>Archivos de origen\Tablas</Filter>
+    </ClCompile>
+    <ClCompile Include="Usuario.cpp">
+      <Filter>Archivos de origen\Modelos</Filter>
+    </ClCompile>
+    <ClCompile Include="TipoUsuario.cpp">
+      <Filter>Archivos de origen\Modelos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\semestre2\CCOMPI\Farmacia\Farmacia\Documentos.cpp">
+      <Filter>Archivos de origen\Tablas</Filter>
+    </ClCompile>
+    <ClCompile Include="dataAdapter.cpp">
+      <Filter>Archivos de origen\Modelos</Filter>
+    </ClCompile>
+    <ClCompile Include="TipoProducto.cpp">
+      <Filter>Archivos de origen\Modelos</Filter>
+    </ClCompile>
+    <ClCompile Include="Almacen.cpp">
+      <Filter>Archivos de origen\Modelos</Filter>
+    </ClCompile>
+    <ClCompile Include="DetalleAlmacen.cpp">
+      <Filter>Archivos de origen\Modelos</Filter>
+    </ClCompile>
+    <ClCompile Include="Almacenes.cpp">
+      <Filter>Archivos de origen\Tablas</Filter>
+    </ClCompile>
+    <ClCompile Include="Producto.cpp">
+      <Filter>Archivos de origen\Modelos</Filter>
+    </ClCompile>
+    <ClCompile Include="Productos.cpp">
+      <Filter>Archivos de origen\Tablas</Filter>
+    </ClCompile>
+    <ClCompile Include="TipoProductos.cpp">
+      <Filter>Archivos de origen\Tablas</Filter>
+    </ClCompile>
+    <ClCompile Include="TipoUsuarios.cpp">
+      <Filter>Archivos de origen\Tablas</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\semestre2\CCOMPI\Farmacia\Farmacia\Documento.h">
+      <Filter>Archivos de encabezado\Modelos</Filter>
+    </ClInclude>
+    <ClInclude Include="Usuario.h">
+      <Filter>Archivos de encabezado\Modelos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\semestre2\CCOMPI\Farmacia\Farmacia\Documentos.h">
+      <Filter>Archivos de encabezado\Tablas</Filter>
+    </ClInclude>
+    <ClInclude Include="Usuarios.h">
+      <Filter>Archivos de encabezado\Tablas</Filter>
+    </ClInclude>
+    <ClInclude Include="TipoUsuario.h">
+      <Filter>Archivos de encabezado\Modelos</Filter>
+    </ClInclude>
+    <ClInclude Include="Almacen.h">
+      <Filter>Archivos de encabezado\Modelos</Filter>
+    </ClInclude>
+    <ClInclude Include="TipoProducto.h">
+      <Filter>Archivos de encabezado\Modelos</Filter>
+    </ClInclude>
+    <ClInclude Include="DetalleAlmacen.h">
+      <Filter>Archivos de encabezado\Modelos</Filter>
+    </ClInclude>
+    <ClInclude Include="dataAdapter.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Producto.h">
+      <Filter>Archivos de encabezado\Modelos</Filter>
+    </ClInclude>
+    <ClInclude Include="Productos.h">
+      <Filter>Archivos de encabezado\Tablas</Filter>
+    </ClInclude>
+    <ClInclude Include="Almacenes.h">
+      <Filter>Archivos de encabezado\Tablas</Filter>
+    </ClInclude>
+    <ClInclude Include="TipoProductos.h">
+      <Filter>Archivos de encabezado\Tablas</Filter>
+    </ClInclude>
+    <ClInclude Include="TipoUsuarios.h">
+      <Filter>Archivos de encabezado\Tablas</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Usuarios.txt" />
+    <Text Include="Productos.txt" />
+    <Text Include="TipoUsuarios.txt" />
+    <Text Include="TipoProductos.txt" />
+    <Text Include="Almacenes.txt" />
+  </ItemGroup>
+</Project>
